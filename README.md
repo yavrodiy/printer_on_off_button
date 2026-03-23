@@ -1,59 +1,30 @@
-# Запускает и выключает питание принтера при нажатии на кнопку.
+# Turning the 3d printer on and off with an external button, connected to Orange PIi
 
-Программа к статье https://3dtoday.ru/blogs/alexalexk/octoprint-vklyucenie-vyklyucenie-bloka-pitaniya-knopkoi
+The program for Orange Pi allows you to control the power supply of a 3d printer, connected via a relay, using an external non-lockable button
 
-На основе https://pcminipro.ru/orangepi/wiringop-wiringpi-na-orange-pi/
-Проверялось на OrangePI Lite / Armbian Armbian buster 20.08
+The program requires WiringOP to work
 
-Для работы требуется WiringOP https://github.com/zhaolei/WiringOP
-
-
- install WiringOP 
+Install WiringOP 
  	
- 	git clone https://github.com/zhaolei/WiringOP.git -b h3
-	cd WiringOP; chmod +x ./build; sudo ./build	
- first INSTALL
+ 	git clone https://github.com/orangepi-xunlong/wiringOP.git -b next
+	cd wiringOP; sudo ./build clean; sudo ./build	
 
-  	cd #; git clone https://github.com/alexkoo/printer_on_button; cd printer_on_button; nano button.c
-	gcc button.c -o button -lwiringPi -lpthread; sudo button
+Download button.c from GitHub
 
- UPDATE 
- 
- 	cd #; cd printer_on_button; git pull; gcc button.c -o button -lwiringPi -lpthread; 
-  RUN
-  
- 	cd #; cd printer_on_button; sudo pkill button; sudo button
- 
+	git clone https://github.com/yavrodiy/printer_on_off_button
+	cd printer_on_off_button
 
-Установка с гитхаба:
-
-	cd #
-	git clone https://github.com/alexkoo/printer_on_button
-	cd printer_on_button
-Если папка уже имеется
-	
-	cd printer_on_button
-	git pull
-Правим button.c под свои нужды
+Edit button.c if required
 
 	nano button.c
-Компилируем
+
+Build
 
 	gcc button.c -o button -lwiringPi -lpthread
-Запускаем 
 
-	sudo button
+Run
 
-Добавляем в автозапуск:
-В файл /etc/rc.local перед  exit0  добавляем путь к файлу
-
-	sudo nano /etc/rc.local
-	/home/pi/printer_on_button/button
-
-Добавлена функция инвертирования сигнала для работы PsuControl 
-https://github.com/kantlivelong/OctoPrint-PSUControl/wiki/Settings#sensing
-
-Добавлена перезагрузка klipper при включении
+	./button
 
 
 
