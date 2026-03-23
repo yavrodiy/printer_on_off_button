@@ -20,11 +20,11 @@ Edit button.c if required
 
 Build
 
-	gcc button.c -o button -lwiringPi -lpthread
+	gcc ~/printer_on_off_button/button.c -o button -lwiringPi -lpthread
 
 Run
 
-	./button
+	sudo ./button
 
 
 
