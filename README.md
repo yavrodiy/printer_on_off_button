@@ -1,4 +1,4 @@
-# Turning the 3d printer on and off with an external button, connected to Orange PIi
+# Turning the 3d printer on and off with an external button, connected to Orange Pi
 
 The program for Orange Pi allows you to control the power supply of a 3d printer, connected via a relay, using an external non-lockable button
 
