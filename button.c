@@ -3,8 +3,8 @@
 
 int main (void) {
 
-const char  sens_on = 1;	//compatibility with PSU control
-const char  button_pin = 8; //connect to 3.3v
+const char  sens_on = 1;	//compatibiltity with Octoprint PSU control
+const char  button_pin = 8; //connect button to 3.3v
 const char  sense_pin = 1;
 const char  out_pin = 2;    //pin connected to external relay module
 
