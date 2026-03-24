@@ -1,0 +1,9 @@
+[Unit]
+Description=Button GPIO Service
+After=multi-user.target
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/button
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
