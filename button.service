@@ -1,9 +1,9 @@
 [Unit]
-Description=Button GPIO Service
+Description=3D Printer Power Controller
 After=multi-user.target
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/button
+ExecStart=/usr/local/bin/printer-power
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
