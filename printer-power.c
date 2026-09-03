@@ -97,7 +97,7 @@
  */
 
 #define OCTOPRINT_URL \
-"http://127.0.0.1/api/printer"
+"http://127.0.0.1:5000/api/printer"
 
 
 /*
@@ -110,7 +110,7 @@
  * с правами 600.
  */
 
-#define OCTOPRINT_API_KEY "g9-YMECTBKO5JYsB4pB9hv_FZZLvmS1AHT2qMm8_V4c"
+#define OCTOPRINT_API_KEY "***APIKEY****"
 
 
 /* ============================================================
@@ -460,7 +460,7 @@ static int octoprint_connection_command(const char *json)
     curl_easy_setopt(
         curl,
         CURLOPT_URL,
-        "http://127.0.0.1/api/connection"
+        "http://127.0.0.1:5000/api/connection"
     );
 
     curl_easy_setopt(
