@@ -15,19 +15,21 @@ Download source from GitHub
 	git clone https://github.com/yavrodiy/printer_on_off_button
 	cd printer_on_off_button
 
-Edit button.c if required
+Edit printer-power.c if required, add Api key
 
-	nano button.c
+	nano printer-power.c
 
 Build
 
-	gcc ~/printer_on_off_button/button.c -o button -lwiringPi -lpthread
+	sudo apt install gcc libcurl4-openssl-dev
+	gcc -O2 -Wall ~/printer_on_off_button/printer-power.c -o printer-power -lwiringPi -lcurl
+
 
 Run
 
-	sudo ./button
+	sudo ./printer-power
 ### Setting the program as a service for automatic startup
-	sudo cp button /usr/local/bin/
+	sudo cp printer-power /usr/local/bin/
 	sudo cp button.service /etc/systemd/system/
 	sudo systemctl enable button
 
